@@ -6,7 +6,7 @@ const db = mysql.createConnection({
     password: 'Rs@201105',
     database: 'CAREERANALYSIS'
 });
-
+//new
 db.connect((err) => {
     if (err) {
         console.log("DB connection failed:", err);
