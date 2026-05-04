@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path Analyzer - Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e5f5;
+            color: #4a148c;
+        }
+        header {
+            background-color: #7b1fa2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #6a1b9a;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section h2 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        .result-item {
+            margin-bottom: 30px;
+        }
+        .career-suggestions, .skill-gap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background-color: #f8f5ff;
+            border: 1px solid #ce93d8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 300px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        .card h3, .card h4 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        .cta-button {
+            background-color: #7b1fa2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background-color: #6a1b9a;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #7b1fa2;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career Path Analyzer</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Student Profile</a>
+        <a href="results.html">Analysis Results</a>
+        <a href="courses.html">Course Recommendations</a>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Analysis Results</h2>
+            <div class="result-item">
+                <h3>Career Suggestions</h3>
+                <div class="career-suggestions">
+                    <div class="card">
+                        <h4>Data Analyst</h4>
+                        <p>Based on your skills in data analysis and programming.</p>
+                        <a href="courses.html" class="cta-button">View Courses</a>
+                    </div>
+                    <div class="card">
+                        <h4>Software Developer</h4>
+                        <p>Leveraging your programming skills and interests.</p>
+                        <a href="courses.html" class="cta-button">View Courses</a>
+                    </div>
+                    <div class="card">
+                        <h4>UX Designer</h4>
+                        <p>Combining design interests with technical skills.</p>
+                        <a href="courses.html" class="cta-button">View Courses</a>
+                    </div>
+                </div>
+            </div>
+            <div class="result-item">
+                <h3>Skill Gap Analysis</h3>
+                <div class="skill-gap">
+                    <div class="card">
+                        <h4>Missing Skills</h4>
+                        <ul>
+                            <li>Machine Learning</li>
+                            <li>Advanced SQL</li>
+                            <li>Cloud Computing</li>
+                        </ul>
+                        <a href="courses.html" class="cta-button">Find Courses</a>
+                    </div>
+                    <div class="card">
+                        <h4>Strengths</h4>
+                        <ul>
+                            <li>Basic Programming</li>
+                            <li>Data Visualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2023 Career Path Analyzer. Built for DBMS Mini Project.</p>
+    </footer>
+</body>
+</html>

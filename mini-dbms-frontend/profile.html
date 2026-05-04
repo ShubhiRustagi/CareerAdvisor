@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path Analyzer - Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            margin: 0;
+        }
+        header {
+            background-color: #7b1fa2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #6a1b9a;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 14px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 24px;
+            max-width: 760px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            border: 1px solid #d1c4e9;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,.05);
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .form-group {
+            flex: 1 1 280px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        input, textarea, select {
+            padding: 12px 14px;
+            border: 1px solid #cdb8e3;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        button {
+            background-color: #7b1fa2;
+            color: white;
+            border: none;
+            padding: 14px 18px;
+            margin-top: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        button:disabled {
+            opacity: 0.65;
+            cursor: default;
+        }
+        .result-card {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #fbe9ff 0%, #ede7f6 100%);
+            border: 1px solid #d1c4e9;
+        }
+        .result-card h3 {
+            margin-top: 0;
+        }
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .badge {
+            background: #7b1fa2;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.95rem;
+        }
+        .tips {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .status-message {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: #4a148c;
+        }
+        .status-message.error {
+            color: #b71c1c;
+        }
+        footer {
+            text-align: center;
+            padding: 16px;
+            color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Career Path Analyzer</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="profile.html">Student Profile</a>
+    <a href="results.html">Analysis Results</a>
+    <a href="courses.html">Course Recommendations</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Student Profile</h2>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="p_name">Name</label>
+                <input id="p_name" placeholder="Enter your name" autocomplete="name">
+            </div>
+            <div class="form-group">
+                <label for="p_age">Age</label>
+                <input id="p_age" type="number" min="10" placeholder="Enter your age">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="p_email">Email</label>
+                <input id="p_email" type="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="p_mobile">Mobile Number</label>
+                <input id="p_mobile" type="tel" placeholder="Enter mobile number">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="p_degree">Degree</label>
+                <input id="p_degree" placeholder="Enter your degree">
+            </div>
+            <div class="form-group">
+                <label for="p_password">Password</label>
+                <input id="p_password" type="password" placeholder="Enter a password">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="p_academic">Academic Performance</label>
+                <select id="p_academic">
+                    <option value="">Select performance</option>
+                    <option value="good">Good</option>
+                    <option value="avg">Average</option>
+                    <option value="weak">Weak</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="p_interests">Interests</label>
+                <textarea id="p_interests" rows="3" placeholder="e.g. data science, design, management"></textarea>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="p_skills">Skills</label>
+                <textarea id="p_skills" rows="3" placeholder="e.g. programming, communication, research"></textarea>
+            </div>
+        </div>
+
+        <button id="analyzeBtn" type="button">Analyze Profile</button>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <div id="analysisResult" class="result-card">
+            <h3>Profile Suggestions</h3>
+            <p>Fill in your details and press analyze to see suggestions.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Career Path Analyzer</p>
+</footer>
+
+<script>
+const nameInput = document.getElementById('p_name');
+const ageInput = document.getElementById('p_age');
+const emailInput = document.getElementById('p_email');
+const mobileInput = document.getElementById('p_mobile');
+const degreeInput = document.getElementById('p_degree');
+const passwordInput = document.getElementById('p_password');
+const academicInput = document.getElementById('p_academic');
+const interestsInput = document.getElementById('p_interests');
+const skillsInput = document.getElementById('p_skills');
+const analyzeBtn = document.getElementById('analyzeBtn');
+const statusMessage = document.getElementById('statusMessage');
+const analysisResult = document.getElementById('analysisResult');
+
+function getSuggestions({ academic, interests, skills }) {
+    const lowInterests = interests.toLowerCase();
+    const lowSkills = skills.toLowerCase();
+    const suggestions = new Set();
+
+    if (academic === 'good' && lowSkills.includes('programming')) {
+        suggestions.add('Software Engineer');
+        suggestions.add('AI / ML Engineer');
+    }
+    if (lowSkills.includes('data') || lowInterests.includes('data')) {
+        suggestions.add('Data Analyst');
+        suggestions.add('Data Scientist');
+    }
+    if (lowSkills.includes('design') || lowInterests.includes('design')) {
+        suggestions.add('UI/UX Designer');
+        suggestions.add('Graphic Designer');
+    }
+    if (lowSkills.includes('communication') || lowInterests.includes('management')) {
+        suggestions.add('Marketing Specialist');
+        suggestions.add('Business Analyst');
+    }
+    if (lowInterests.includes('teaching') || lowSkills.includes('training')) {
+        suggestions.add('Education Consultant');
+        suggestions.add('Corporate Trainer');
+    }
+    if (!suggestions.size) {
+        suggestions.add('Explore Tech, Business, and Creative paths');
+        suggestions.add('Build foundational skills gradually');
+    }
+    return Array.from(suggestions);
+}
+
+function showAnalysis(profile) {
+    const suggestions = getSuggestions(profile);
+    analysisResult.innerHTML = `
+        <h3>Hello ${profile.name || 'Student'}</h3>
+        <p><strong>Suggested career path(s):</strong></p>
+        <div class="badge-list">
+            ${suggestions.map(s => `<span class="badge">${s}</span>`).join('')}
+        </div>
+        <div class="tips">
+            <p><strong>Next steps:</strong></p>
+            <ul>
+                <li>Refine your skills in fields you enjoy.</li>
+                <li>Explore courses that match the suggested paths.</li>
+                <li>Update your profile and analyze again if needed.</li>
+            </ul>
+        </div>
+    `;
+}
+
+function analyzeProfile() {
+    const name = nameInput.value.trim();
+    const age = ageInput.value.trim();
+    const email = emailInput.value.trim();
+    const degree = degreeInput.value.trim();
+    const password = passwordInput.value.trim();
+    const academic = academicInput.value;
+    const interests = interestsInput.value.trim();
+    const skills = skillsInput.value.trim();
+
+    if (!name || !email || !degree || !password) {
+        statusMessage.textContent = 'Name, email, degree and password are required for analysis.';
+        statusMessage.classList.add('error');
+        return;
+    }
+
+    statusMessage.textContent = '';
+    statusMessage.classList.remove('error');
+
+    const profile = {
+        name,
+        age: age ? parseInt(age, 10) : null,
+        email,
+        degree,
+        password,
+        mobile_number: mobileInput.value.trim(),
+        academic,
+        interests,
+        skills
+    };
+
+    showAnalysis(profile);
+}
+
+analyzeBtn.addEventListener('click', analyzeProfile);
+</script>
+</body>
+</html>

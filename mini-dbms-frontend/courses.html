@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f2ff;
+            color: #3a0e6f;
+            margin: 0;
+        }
+        header {
+            background: #6a1b9a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background: #7b1fa2;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+        .intro-card, .category-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #e2d3f5;
+            padding: 24px;
+            box-shadow: 0 10px 28px rgba(110, 62, 157, 0.08);
+            margin-bottom: 20px;
+        }
+        .category-card h3 {
+            margin-top: 0;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .course-list li {
+            margin-bottom: 14px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #f6eefb;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .course-title {
+            font-weight: 700;
+            margin: 0;
+        }
+        .course-platform {
+            font-size: 0.95rem;
+            color: #4a148c;
+        }
+        .course-link {
+            text-decoration: none;
+            color: #fff;
+            background: #7b1fa2;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+        }
+        .course-link:hover {
+            background: #5d0f7a;
+        }
+        footer {
+            text-align: center;
+            padding: 18px;
+            color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Course Recommendations</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="profile.html">Student Profile</a>
+    <a href="results.html">Analysis Results</a>
+    <a href="courses.html">Course Recommendations</a>
+</nav>
+
+<div class="container">
+    <div class="intro-card">
+        <h2>Organized course suggestions</h2>
+        <p>Select a course based on your interests and skills. Each entry includes a direct link to the learning platform.</p>
+    </div>
+
+    <div class="category-card">
+        <h3>Web Development</h3>
+        <ul class="course-list">
+            <li>
+                <div>
+                    <p class="course-title">Responsive Web Design</p>
+                    <p class="course-platform">Platform: freeCodeCamp</p>
+                </div>
+                <a class="course-link" href="https://www.freecodecamp.org/learn/responsive-web-design/" target="_blank">Visit course</a>
+            </li>
+            <li>
+                <div>
+                    <p class="course-title">HTML, CSS, and Javascript for Web Developers</p>
+                    <p class="course-platform">Platform: Coursera</p>
+                </div>
+                <a class="course-link" href="https://www.coursera.org/learn/html-css-javascript-for-web-developers" target="_blank">Visit course</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-card">
+        <h3>Data Science & Analytics</h3>
+        <ul class="course-list">
+            <li>
+                <div>
+                    <p class="course-title">Python for Everybody</p>
+                    <p class="course-platform">Platform: Coursera</p>
+                </div>
+                <a class="course-link" href="https://www.coursera.org/specializations/python" target="_blank">Visit course</a>
+            </li>
+            <li>
+                <div>
+                    <p class="course-title">Google Data Analytics Professional Certificate</p>
+                    <p class="course-platform">Platform: Coursera</p>
+                </div>
+                <a class="course-link" href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank">Visit course</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-card">
+        <h3>Design</h3>
+        <ul class="course-list">
+            <li>
+                <div>
+                    <p class="course-title">UI/UX Design Specialization</p>
+                    <p class="course-platform">Platform: Coursera</p>
+                </div>
+                <a class="course-link" href="https://www.coursera.org/specializations/ui-ux-design" target="_blank">Visit course</a>
+            </li>
+            <li>
+                <div>
+                    <p class="course-title">Introduction to Graphic Design</p>
+                    <p class="course-platform">Platform: Udemy</p>
+                </div>
+                <a class="course-link" href="https://www.udemy.com/course/graphic-design/" target="_blank">Visit course</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-card">
+        <h3>Business & Marketing</h3>
+        <ul class="course-list">
+            <li>
+                <div>
+                    <p class="course-title">Digital Marketing Fundamentals</p>
+                    <p class="course-platform">Platform: edX</p>
+                </div>
+                <a class="course-link" href="https://www.edx.org/course/digital-marketing" target="_blank">Visit course</a>
+            </li>
+            <li>
+                <div>
+                    <p class="course-title">Excel Skills for Business</p>
+                    <p class="course-platform">Platform: Coursera</p>
+                </div>
+                <a class="course-link" href="https://www.coursera.org/specializations/excel" target="_blank">Visit course</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Career Path Analyzer</p>
+</footer>
+</body>
+</html>
